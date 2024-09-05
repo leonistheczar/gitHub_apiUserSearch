@@ -58,8 +58,6 @@ function fetchUserRepos() {
     let username = searchInput.value;
     github.getUserRepos(username)
     .then(userReposData => {
-        console.log(userReposData);
-
         const repoElements = [repo1,repo2,repo3,repo4,repo5];
         const repos = userReposData.reposData; 
         for (let i = 0; i < repos.length && i < 5; i++) {
