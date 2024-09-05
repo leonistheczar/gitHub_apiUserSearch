@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    line-height: 1.4;
+    background: #040713;
+    color: #f2f2f2;
+    max-width: 1300px;
+}
+ /* Utility Classes & Constant Styles */
+ 
+ /* Used to create an overlay behind the loader */
+ #body:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+
+ }
+ #loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+ }
+.userList{
+    list-style:none;
+    margin: 0.75rem 0rem;
+} 
+.reposList{
+    padding: 0.75rem;
+}
+.blue-bg{
+    height: 20px;
+    width: 100%;
+    background: rgb(0, 111, 202);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin-left: 1.2rem;
+    text-align: center;
+}
+.green-bg{
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    background: rgb(11, 105, 61);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin-left: 1.2rem;
+}
+/* Main */
+#main-heading{
+    padding: 1.25rem;
+    text-align: center;
+}
+#main-section{
+    height: 100vh;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 0.75fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    height: 70%;
+    position: relative;
+}
+.container #profileData{
+    grid-column: 2 /span 3;
+}
+.container #searchWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    border: 1px solid #eee;
+    width: 100%;        
+    height: 80vh;
+    border-radius: 8px;
+    background: #0f0f0f;
+    padding: 2rem 1rem;
+    row-gap: 0;
+    position: relative;
+}
+#searchWrapper #searchHeading{
+    font-size: 1.8rem;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+#searchWrapper #userInput {
+    display: flex;
+    flex-direction: column; 
+    gap: 0.25rem 0rem  ;
+}
+#searchWrapper #userInput label{
+    text-transform: capitalize;
+    height: 25px;
+    width: 100%;
+    padding: 0 0.25rem;
+    text-align: left;
+}
+#searchWrapper #userInput #searchInput{
+    height: 32px;
+    padding: 0 0.4rem;
+    background: transparent;
+    color: #f2f2f2;
+    border-radius: 4px;
+    outline: 1px solid #505050;
+    border: none;
+    transition: all .2s ease-in;
+}
+#searchWrapper #userInput #searchInput:focus{
+    outline-color: rgb(0, 132, 255);
+}
+#searchWrapper #userInput #searchSubmit{
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin: 0.75rem 5rem;
+    background: #f2f2f2;
+    cursor: pointer;
+    color: #0f0f0f;
+    font-weight: bold;
+}
+#searchWrapper #userInput #searchSubmit:hover{
+    background: #ebebeb;
+}
+/* Profile Data */
+.container #profileData{
+    background-image: linear-gradient(to bottom, #171718, #201f27, #292837, #343047, #413857);
+    border-radius: 8px;
+    height: 100%;
+    padding: 1rem 2rem;
+    text-align: left;
+    /* overflow: hidden; */
+}
+#profileHeading{
+    text-align: center;
+}
+#profileData #data{
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: right;
+}
+#profileData #userImg{
+    display: flex;
+    flex-direction: column;
+}
+#userImg img{
+    max-width: 80%;
+    margin-bottom: 1.2rem;
+}
+#userImg #userLink{
+    display: inline-block;
+    text-decoration: none;
+    color: #f2f2f2;
+    background: #020e38;
+    width: 70%;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin-left: 1.5rem;
+    transition: all .1s ease-out;
+}
+#userImg #userLink:hover{
+    background: #0a1f6b;
+}
+#userInfo{
+    column-span: 2 /span 2;
+    margin-left: 25px;
+}
+/* Repos */
+#repos ol{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0.25rem;
+}
+#repos ol li{
+    margin: 0 0.75rem;
+    width: 100%;
+}
